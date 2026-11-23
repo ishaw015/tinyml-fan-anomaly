@@ -2,3 +2,6 @@ raw_data/
 data/*.npy
 __pycache__/
 *.csv
+.venv/
+inspect_plot.png
+*.pyc
