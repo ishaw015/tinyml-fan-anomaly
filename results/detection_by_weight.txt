@@ -1,0 +1,15 @@
+﻿errors: 13034 | test_y: 13034 | threshold: 1.1643
+Window-to-file alignment verified: True
+
+Detection % (windows flagged) by weight and speed band (Hz)
+weight    files    10-20    20-30    30-40    40-50    50-60    60-70      ALL
+6g           49     0.0%     2.1%    18.7%    47.4%    63.7%   100.0%    31.0%
+10g          48     0.0%     0.8%    41.5%    95.0%    95.6%   100.0%    51.9%
+15g          48     0.0%     3.9%    70.5%   100.0%   100.0%   100.0%    59.9%
+20g          49     0.0%     9.2%    78.4%   100.0%   100.0%   100.0%    62.8%
+25g          47     5.3%    33.4%    88.4%   100.0%   100.0%        -    67.2%
+30g          47     4.6%    68.2%    93.2%   100.0%   100.0%        -    75.5%
+35g          45    26.3%    90.0%    98.4%   100.0%   100.0%        -    84.3%
+
+Files behind each cell are in the 'files' column overall; cells with only a few files are unreliable.
+files/band            52       70       68       70       64        9

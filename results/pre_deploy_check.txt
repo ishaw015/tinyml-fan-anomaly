@@ -1,0 +1,42 @@
+﻿============================================================
+PART 1: model tensor details
+============================================================
+File: model/autoencoder_qat_int8.tflite  (8312 bytes)
+INPUT: name=serving_default_input_1:0 shape=[1, 64] dtype=int8 scale=0.03149984 zero_point=27
+OUTPUT: name=StatefulPartitionedCall:0 shape=[1, 64] dtype=int8 scale=0.02820883 zero_point=-7
+Total tensors in model: 13
+
+============================================================
+PART 2: 3-consecutive-window alert rule, per recording
+============================================================
+Window-to-file alignment verified: True
+
+Window-level false alarms on healthy test windows (no 3-window rule):
+  QAT AE    0.00%
+  RMS       0.00%
+  Hybrid    0.00%
+
+Recording-level result with the 3-window rule (10 healthy recordings, 333 faulty):
+method      healthy files alarmed   faulty files caught
+QAT AE                       0/10       215/333 (64.6%)
+RMS                          0/10       218/333 (65.5%)
+Hybrid                       0/10       246/333 (73.9%)
+
+Faulty recordings caught (3-window rule), % by imbalance weight
+weight    files    QAT AE       RMS    Hybrid
+6g           49     38.8%     26.5%     46.9%
+10g          48     54.2%     45.8%     58.3%
+15g          48     62.5%     66.7%     79.2%
+20g          49     61.2%     75.5%     81.6%
+25g          47     70.2%     78.7%     80.9%
+30g          47     78.7%     83.0%     83.0%
+35g          45     88.9%     84.4%     88.9%
+
+Faulty recordings caught (3-window rule), % by speed band (Hz)
+band      files    QAT AE       RMS    Hybrid
+10-20        52      5.8%      1.9%      5.8%
+20-30        70     32.9%     65.7%     65.7%
+30-40        68     76.5%     57.4%     82.4%
+40-50        70     95.7%     84.3%     97.1%
+50-60        64     95.3%    100.0%    100.0%
+60-70         9    100.0%    100.0%    100.0%
